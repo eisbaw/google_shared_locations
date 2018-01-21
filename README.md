@@ -1,46 +1,32 @@
-# ioBroker.google-sharedlocations
-=================
+# Fetch Google shared locations
 
 ## Description
-This is an ioBroker-adapter that can retrieve the location data of users that are sharing their location via google shared locations. It can not retrieve the location of the user that is used to access google.
+This nodejs script can retrieve the location data of contacts that are sharing their location with you via Google's Shared location feature.
+It can not retrieve the location of the user that is used to access google.
+To actually obtain your own location, you have to create a dummy Google account and share your location with it.
+
+Adapted by Mark Ruvald Pedersen from [1] to stand-alone usage without ioBroker.
+ioBroker seems like a cool IoT home-automation project, but I don't happen to use it (yet).
+Obtaining shared Google locations has many potential uses, enough to want it as a primitive operation.
+[1] https://github.com/t4qjXH8N/ioBroker.google-sharedlocations
+
+Potential uses include:
+ - Controlling heating with geo-fence around your house (ioBroker probably does this already).
+ - Logging / spying.
+ - Logging without extra 3rd party android app (built into Android/GAPPS).
+ - Create many geo-fences on your Raspberry Pi having complex rules (sequence points, time windows).
+ - Validating the reported Android Debug mock/fake GPS location.
+ - Integration with WiGLE WiFi database.
+
+## TODO
+ - Let password be read from a file. NOTE: Passing your password on the command line makes it visible to all users on your system!
 
 ## Usage
-When opening the configuration for the first time enter only the google login data. After the first run of the instance you can get the user ids from the objects page from the folder of the adapter instance. These ids have to be used in the configuration to identify users.
-
-
-## Changelog
-#### 0.0.2 (2018-01-02)
-- improved descriptions
-- several bugfixes
-
-#### 0.0.1 (2017-12-31)
-- basic features tested
-
-known issued
-- objects for fences have to be deleted manually when they are removed in the admin interface
+Pass your username and password as arguments.
 
 ## Disclaimer
 I am not in any association with Google.
 
 ## License
-The MIT License (MIT)
+See LICENSE file.
 
-Copyright (c) 2017-2018 Christian Vorholt <chvorholt@mail.com>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
